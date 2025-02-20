@@ -1,9 +1,13 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
+
+# Definir o caminho relativo do arquivo, considerando que o arquivo está em uma pasta 'Materiais' que está uma pasta antes
+caminho_arquivo = os.path.join('..', 'Materiais', 'houses_rent.xlsx')
 
 # Carregar o arquivo Excel - Biblioteca pandas
-aluguel_casa = pd.read_excel(r"D:\Documents\Meus Documentos\Cursos\Escola DNC\Cientista de Dados\Matéria 4 - Análise de Regressão em Python\Prática\Materiais\houses_rent.xlsx")
+aluguel_casa = pd.read_excel(caminho_arquivo)
 
 # Exibir as primeiras 5 linhas do DataFrame
 print('Head Inicial:')

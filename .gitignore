@@ -1,0 +1,40 @@
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Python
+*.pyc
+*.pyo
+__pycache__
+
+# VS Code
+.vscode/
+
+# Power BI
+.pbix
+
+# Database
+*.sqlite
+*.db
+
+# Virtualenv
+venv/
+env/
+*.egg-info/
+
+# Pandas profiling
+.profile/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyCharm
+.idea/
+
+# Kaggle
+*.json
+
+# Other
+*.log
+*.csv
+*.tsv
