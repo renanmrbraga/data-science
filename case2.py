@@ -1,11 +1,6 @@
 import pandas as pd
-import seaborn as sns
-import plotly.io as pio
-import matplotlib.pyplot as plt
-import chart_studio.plotly as py
-import cufflinks as cf
 import plotly.graph_objects as go
-import plotly.express as px
+from plotly.subplots import make_subplots
 import os
 
 # Definir caminho base
@@ -51,10 +46,20 @@ agg_idade_bandeira = round(vendas_cliente.groupby('bandeira')['idade'].agg('mean
 agg_dept_preco = round(vendas_correto.groupby('Nome_Departamento')['Preço_com_frete'].agg('mean').sort_values(ascending=False).reset_index(), 2)
 venda_por_data = vendas_correto.groupby('Data').idcompra.nunique().reset_index()
 
-# Gráfico 1 com plotly
-fig1 = px.bar(agg_idade_bandeira, x='bandeira', y='idade')
-pio.show(fig1) # Exibir o gráfico diretamente no VSCode
+# Criando o gráfico de barras
+fig1 = go.Bar(x=agg_idade_bandeira['bandeira'], y=agg_idade_bandeira['idade'])
 
-# Gráfico 2 com plotly
-fig2 = px.line(venda_por_data, x='Data', y='idcompra')
-pio.show(fig2) # Exibir o gráfico diretamente no VSCode
+# Criando o gráfico de linha
+fig2 = go.Scatter(x=venda_por_data['Data'], y=venda_por_data['idcompra'], mode='lines')
+
+# Criando subplots
+fig = make_subplots(rows=1, cols=2,  # 1 linha, 2 colunas
+                    subplot_titles=("Gráfico de Barras", "Gráfico de Linha"))
+
+# Adicionando os gráficos nas subplots
+fig.add_trace(fig1, row=1, col=1)
+fig.add_trace(fig2, row=1, col=2)
+
+# Exibindo o gráfico
+fig.update_layout(title_text="Gráficos Combinados", showlegend=False)
+fig.show()
