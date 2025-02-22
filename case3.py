@@ -12,8 +12,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 import os
 
-# Definir o caminho relativo do arquivo, considerando que o arquivo está em uma pasta 'Materiais' que está uma pasta antes
-caminho_arquivo = os.path.join('..', 'Materiais', 'USA_Housing.csv')
+# Definir o caminho relativo do arquivo, considerando que o arquivo está em uma pasta 'materiais'
+caminho_arquivo = os.path.join(os.getcwd(), 'materiais', 'USA_Housing.csv')
 
 # Carregar o arquivo CSV usando o pandas
 base_casa = pd.read_csv(caminho_arquivo, sep=',')
@@ -71,24 +71,11 @@ for trace in fig2.data:
 # Atualizar o layout com o título
 fig.update_layout(title_text="Gráficos de Caixa de `Avg._Area_Income` e `Price`")
 
-# Mostrar o gráfico - Descomentado se necessário
-#fig.show()
-
-# Seaborn pairplot - Comparar variação das variáveis com o preço
-# Para comparar a variação das variáveis selecionadas com o preço, descomente a linha abaixo
-#sns.pairplot(base_casa, x_vars=['Avg._Area_Income', 'Avg._Area_House_Age', 'Avg._Area_Number_of_Rooms', 'Avg._Area_Number_of_Bedrooms', 'Area_Population'], y_vars='Price')
-#plt.show()
+# Mostrar o gráfico - Descomente a linha abaixo se necessário
+# fig.show()
 
 # Calcular e exibir a correlação entre as variáveis numéricas
 print(base_casa.corr())
-
-# Seaborn heatmap para visualizar a correlação entre as variáveis
-#sns.heatmap(base_casa.corr(), annot=True)
-#plt.show()
-
-# Seaborn histograma para analisar a distribuição dos preços
-#sns.histplot(base_casa['Price'])
-#plt.show()
 
 # Definindo as variáveis independentes (X) e dependentes (Y) para o modelo de regressão
 X = base_casa[['Avg._Area_Income', 'Avg._Area_House_Age', 'Avg._Area_Number_of_Rooms', 'Avg._Area_Number_of_Bedrooms', 'Area_Population']]
@@ -108,7 +95,7 @@ lm = LinearRegression()
 
 # Treinando o modelo de regressão linear com os dados de treino
 lm.fit(X_train, Y_train)
-cd 
+
 # Predizer valor na base de testes
 y_pred = lm.predict(X_test)
 

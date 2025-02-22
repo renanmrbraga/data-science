@@ -4,11 +4,16 @@ from plotly.subplots import make_subplots
 import os
 
 # Definir caminho base
-caminho_base = os.path.join('..', 'Materiais')
+caminho_base = os.path.join(os.getcwd(), 'materiais')
 
-# Carregar base de vendas
+# Verificar se o arquivo 'varejo.xlsx' existe
 caminho_vendas = os.path.join(caminho_base, 'varejo.xlsx')
-vendas = pd.read_excel(caminho_vendas)
+if os.path.exists(caminho_vendas):
+    print("Arquivo de vendas encontrado!")
+    # Carregar base de vendas
+    vendas = pd.read_excel(caminho_vendas)
+else:
+    print("Arquivo de vendas NÃO encontrado. Verifique o caminho.")
 
 # Substituir valores inconsistentes na coluna 'idcanalvenda'
 vendas['idcanalvenda'] = vendas['idcanalvenda'].str.replace('APP', 'Aplicativo')

@@ -38,3 +38,6 @@ ipython_config.py
 *.log
 *.csv
 *.tsv
+
+# Materiais sensíveis
+materiais/
