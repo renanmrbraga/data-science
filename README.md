@@ -1,16 +1,21 @@
-Data Science Studies
-This repository contains my studies and projects related to my Data Scientist course, focusing on data analysis, visualization, and manipulation. Throughout the course, I am exploring various essential tools and technologies for the field, such as Python, SQL, Power BI, and more.
+# Data Science: Machine Learning Scripts
 
-About
-The purpose of this repository is to centralize and organize all my studies and projects, applying technologies and tools for data analysis. I am applying what I learn in topics like:
+Este repositório contém uma coleção de **scripts em Python** dedicados a explorar, testar e experimentar diferentes algoritmos e técnicas de **Machine Learning**. O objetivo principal é aprender e aplicar conceitos de **Data Science** de forma prática, utilizando bibliotecas populares do ecossistema Python.
 
-Data analysis and manipulation with Python.
-Data visualization with Power BI and Plotly.
-Building and evaluating Machine Learning models.
-Integrating tools like PostgreSQL and MySQL for data storage and manipulation.
-Technologies Used
-Languages: Python, SQL
-Tools: Power BI, Jupyter, Git
-Libraries: Pandas, NumPy, Plotly, Scikit-learn, Matplotlib
-Databases: PostgreSQL, MySQL
-Others: VSCode, GitHub
+## 📚 Conteúdo
+
+- **Exploração de dados**: Técnicas de pré-processamento, limpeza e visualização de dados.
+- **Modelos de Machine Learning**: Scripts com implementações de modelos supervisionados e não supervisionados.
+- **Validação de Modelos**: Métodos para validação cruzada, métricas de avaliação e tunagem de hiperparâmetros.
+- **Automação de ML**: Aplicação de ferramentas automatizadas para acelerar o desenvolvimento de modelos.
+- **Estudos de caso**: Exemplos práticos utilizando datasets populares.
+
+## 🚀 Tecnologias Utilizadas
+
+As seguintes tecnologias e bibliotecas estão sendo usadas neste projeto:
+
+- **Numpy**: Manipulação e análise de arrays numéricos.
+- **Pandas**: Estruturas de dados para análise e manipulação de datasets.
+- **Scikit-learn**: Implementações de algoritmos de Machine Learning.
+- **Matplotlib** e **Seaborn**: Visualização de dados.
+- Outras bibliotecas complementares.
